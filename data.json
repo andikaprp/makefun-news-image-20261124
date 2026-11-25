@@ -1,40 +1,68 @@
 {
  "briefs": [
   [
+   "EUROPE",
+   "STOXX −0.66% 632.77; DAX −1.26%"
+  ],
+  [
+   "GAZA",
+   "Abu Nahal killed; 4 wounded"
+  ],
+  [
+   "VILLAVICENCIO",
+   "Bomb toll up to 23 injured"
+  ],
+  [
+   "WASHINGTON",
+   "Abrego to Spain; 2-yr case ends"
+  ],
+  [
+   "EUROPE",
+   "Car sales +5.4%; BEVs +61.4%"
+  ],
+  [
+   "SOLOMONS",
+   "Won't renew China pact; A$980m"
+  ],
+  [
+   "KESWICK",
+   "Delia Smith vs £1.2bn centre"
+  ],
+  [
    "HAITI",
-   "El Salvador names 3 dead; $200k aid"
+   "El Salvador: 3 dead; $200k aid"
   ],
   [
    "ENERGY",
-   "Gas +12% $3.57; Brent $86.7 -2.99%"
+   "Gas +12% $3.57; Brent −2.99%"
   ],
   [
    "CRYPTO",
-   "BTC $60,406, -1.68%; ETH $1,695.74"
+   "BTC $60,406 −1.68%; ETH $1,695.74"
   ],
   [
    "TOKYO",
-   "Spending view cut, 1st since Feb 2024"
+   "Spending view cut, 1st since Feb"
   ],
   [
    "QOM",
-   "Singer Ahmadi given 74 lashes in Iran"
+   "Singer Ahmadi given 74 lashes"
   ],
   [
    "TEHRAN",
-   "7 terms for talks; 3 ships hit mines"
+   "7 terms for talks; 3 ships mined"
   ],
   [
-   "ZAPORIZHZHIA",
+   "UKRAINE",
    "Night raids kill 2+, wound 30+"
   ],
   [
    "NEPAL",
-   "Koshi quake: EMSC 5.3; Horizon 5.6"
+   "Koshi quake: EMSC 5.3; other 5.6"
   ],
   [
    "SPACE",
-   "First Pakistani astronaut on Tiangong"
+   "First Pakistani astronaut flies"
   ],
   [
    "BORNO",
@@ -46,257 +74,193 @@
   ],
   [
    "LONDON",
-   "Capita shares plunge 70%, chief quits"
+   "Capita −70%, chief quits"
+  ],
+  [
+   "KYIV",
+   "Zelensky seeks 4-party talks"
+  ],
+  [
+   "BEIJING",
+   "Spy Ma death sentence; 35 secrets"
+  ],
+  [
+   "NEW YORK",
+   "Russell 2000 +0.57% to 2,684.94"
   ]
  ],
- "chartcard": {
-  "asia": [
-   [
-    "NIKKEI 225",
-    3.91,
-    "58,644.63"
-   ],
-   [
-    "KOSPI",
-    7.03,
-    "5,039.35"
-   ],
-   [
-    "MSCI ASIA-PAC.",
-    1.5,
-    "REGIONAL INDEX"
-   ]
-  ],
-  "headline": "KOSPI +7.03%; Nikkei +3.91% as Asia rallies",
-  "n": 3,
-  "place": "TOKYO / SEOUL",
-  "scene": "chart",
-  "source": "HORIZON CLOSE TABLE",
-  "sub": "KOSPI 5,039.35 · Nikkei 58,644.63 · MSCI +1.5%",
-  "tag": "CONFIRMED"
- },
- "compacts": [
+ "datecheck": [
+  "ICJ Myanmar ruling — Thu 19 Nov",
+  "Russian missiles in Poland — Fri 20 Nov",
+  "El Chapo Isidro capture — Sat 21 Nov",
+  "Nvidia +31% / Huang — Mon 23 Nov",
+  "CrowdStrike-Zscaler $43.9bn — Mon 23 Nov",
+  "NATO AWACS to Poland — Mon 23 Nov",
+  "Hong Kong Swire/Cathay — Mon 23 Nov",
+  "Brasilia forecasts — Mon 23 Nov"
+ ],
+ "grid": [
   {
-   "headline": "US lists 7 firms incl. Megaspeed",
-   "label": "7 FIRMS",
-   "n": 4,
-   "place": "WASHINGTON",
-   "scene": "chip",
-   "source": "US BIS",
-   "sub": "Entity List · GPU licences required",
-   "sub_full": "Entity List · GPU licences required · US BIS",
-   "tag": "OFFICIAL"
-  },
-  {
-   "headline": "Zelensky seeks 4-party talks",
-   "label": "4 PARTIES",
-   "n": 5,
-   "place": "KYIV",
-   "scene": "table",
-   "source": "DAILY SUMMARY OF",
-   "sub": "Kyiv ready to meet Tue 24 Nov",
-   "sub_full": "Kyiv ready to meet Tue 24 Nov · DAILY SUMMARY OF",
-   "tag": "REPORTED"
-  },
-  {
-   "headline": "Tripoli: answer on 2-ship strike",
-   "label": "2 SHIPS",
-   "n": 6,
-   "place": "BENGHAZI",
-   "scene": "ship",
-   "source": "HORIZON",
-   "sub": "Drone hit Russian warship at Benghazi",
-   "sub_full": "Drone hit Russian warship at Benghazi · HORIZON",
-   "tag": "REPORTED"
-  },
-  {
+   "callout": "16 DEC",
    "headline": "Hasina returns 16 December",
-   "label": "16 DEC",
-   "n": 7,
+   "n": 4,
    "place": "DHAKA",
    "scene": "plane",
    "source": "REUTERS",
-   "sub": "Biman flight after 2+ years in India",
    "sub_full": "Biman flight after 2+ years in India · REUTERS",
    "tag": "REPORTED"
   },
   {
-   "headline": "‘El Chapo Isidro’ faces 6 charges",
-   "label": "6 CHARGES",
-   "n": 8,
-   "place": "MEXICO CITY",
-   "scene": "shield",
-   "source": "HORIZON",
-   "sub": "Guasave: 4 soldiers, 16 gunmen dead",
-   "sub_full": "Guasave: 4 soldiers, 16 gunmen dead · HORIZON",
-   "tag": "REPORTED"
-  },
-  {
-   "headline": "Death for spy over 35 secrets",
-   "label": "35 SECRETS",
-   "n": 9,
-   "place": "BEIJING",
-   "scene": "file",
-   "source": "GOLD WALL PRESS",
-   "sub": "Ma took over 1m yuan (~$150,000)",
-   "sub_full": "Ma took over 1m yuan (~$150,000) · GOLD WALL PRESS",
-   "tag": "REPORTED"
-  },
-  {
-   "headline": "2 missiles, 1 drone hit Poland",
-   "label": "2 + 1 IN",
-   "n": 10,
-   "place": "WARSAW",
-   "scene": "awacs",
-   "source": "HORIZON",
-   "sub": "Holocene count · NATO sends AWACS",
-   "sub_full": "Holocene count · NATO sends AWACS · HORIZON",
-   "tag": "REPORTED"
-  },
-  {
-   "headline": "Yemen strikes: 25 dead/missing",
-   "label": "25 LOST",
-   "n": 11,
-   "place": "SANAA",
-   "scene": "desert",
-   "source": "HORIZON",
-   "sub": "Coaches hit · 17 dead at telecom sites",
-   "sub_full": "Coaches hit · 17 dead at telecom sites · HORIZON",
-   "tag": "REPORTED"
-  },
-  {
-   "headline": "Pa. measles: 9th death, 1,638 cases",
-   "label": "1,638",
-   "n": 12,
-   "place": "HARRISBURG",
-   "scene": "virus",
-   "source": "AL JAZEERA",
-   "sub": "46 counties · 49 new in 5 days",
-   "sub_full": "46 counties · 49 new in 5 days · AL JAZEERA",
-   "tag": "CONFIRMED"
-  },
-  {
-   "headline": "Canada jets 41.9% serviceable",
-   "label": "41.9%",
-   "n": 13,
-   "place": "OTTAWA",
-   "scene": "jet",
-   "source": "PENTAGON",
-   "sub": "Pentagon rebuke · 88 F-35s reviewed",
-   "sub_full": "Pentagon rebuke · 88 F-35s reviewed · PENTAGON",
-   "tag": "OFFICIAL"
-  },
-  {
+   "callout": "TUE JETS",
    "headline": "Seoul jets scramble on Russians",
-   "label": "TUE JETS",
-   "n": 14,
+   "n": 5,
    "place": "SEOUL",
    "scene": "jets",
    "source": "JAPAN TIMES",
-   "sub": "Jets entered air-defence zone Tue",
    "sub_full": "Jets entered air-defence zone Tue · JAPAN TIMES",
    "tag": "REPORTED"
   },
   {
+   "callout": "7.3M",
    "headline": "WFP: 7.3m threatened by wars",
-   "label": "7.3M RISK",
-   "n": 15,
+   "n": 6,
    "place": "GLOBAL",
    "scene": "wheat",
    "source": "AL JAZEERA",
-   "sub": "Food aid corridors blocked",
    "sub_full": "Food aid corridors blocked · AL JAZEERA",
    "tag": "REPORTED"
+  },
+  {
+   "callout": "1,638",
+   "headline": "Pa. measles: 9th death, 1,638 cases",
+   "n": 7,
+   "place": "HARRISBURG",
+   "scene": "virus",
+   "source": "AL JAZEERA",
+   "sub_full": "Tuesday report, Monday data · 46 counties · AL JAZEERA",
+   "tag": "CONFIRMED"
+  },
+  {
+   "callout": "7 FIRMS",
+   "headline": "US lists 7 firms incl. Megaspeed",
+   "n": 8,
+   "place": "WASHINGTON",
+   "scene": "chip",
+   "source": "US BIS",
+   "sub_full": "Entity List · GPU licences required · US BIS",
+   "tag": "OFFICIAL"
+  },
+  {
+   "callout": "41.9%",
+   "headline": "Canada jets 41.9% serviceable",
+   "n": 9,
+   "place": "OTTAWA",
+   "scene": "jet",
+   "source": "PENTAGON",
+   "sub_full": "Pentagon rebuke · 88 F-35s reviewed · PENTAGON",
+   "tag": "OFFICIAL"
+  },
+  {
+   "callout": "$41BN",
+   "headline": "Sanofi buys Insmed for $41bn",
+   "n": 10,
+   "place": "PARIS",
+   "scene": "pill",
+   "source": "REUTERS",
+   "sub_full": "$175 a share cash · Sanofi +4.5% in Paris · REUTERS",
+   "tag": "CONFIRMED"
+  },
+  {
+   "callout": "CODE RED",
+   "headline": "Microsoft ‘Code Red’ after outage",
+   "n": 11,
+   "place": "REDMOND",
+   "scene": "code",
+   "source": "REUTERS",
+   "sub_full": "Worst Exchange Online incident ever · 1h fix target · REUTERS",
+   "tag": "REPORTED"
+  },
+  {
+   "callout": "16",
+   "headline": "New US tariffs eyed on 16 partners",
+   "n": 12,
+   "place": "WASHINGTON",
+   "scene": "ship",
+   "source": "AP / REUTERS",
+   "sub_full": "China, EU + 14 more · 62% back repeal in poll · AP",
+   "tag": "REPORTED"
+  },
+  {
+   "callout": "103.3",
+   "headline": "US confidence jumps to 103.3",
+   "n": 13,
+   "place": "WASHINGTON",
+   "scene": "basket",
+   "source": "REUTERS",
+   "sub_full": "Up 11.4 pts from 91.9 · Best since Jan 2025 · REUTERS",
+   "tag": "OFFICIAL"
   }
  ],
- "datecheck": [
-  [
-   "BRUSSELS",
-   "EU 22nd Russia pkg proposed"
-  ],
-  [
-   "UN",
-   "AI risk framework in 1 year"
-  ],
-  [
-   "EUROPE",
-   "Closes: CAC +1.48%, DAX +2.15%"
-  ],
-  [
-   "NFL",
-   "Washington beat Cincinnati 22-20"
-  ]
+ "leads": [
+  {
+   "callout": "50,018.70",
+   "headline": "Dow closes above 50,000 first time; Nasdaq falls 1.48%",
+   "n": 1,
+   "place": "NEW YORK",
+   "scene": "wallst",
+   "source": "REUTERS",
+   "sub": "Dow 50,018.70, +0.85% · S&P 500 −0.50% · Nvidia −5.86%",
+   "tag": "CONFIRMED"
+  },
+  {
+   "callout": "+7.03%",
+   "headline": "KOSPI +7.03%; Nikkei +3.91% as Asia rallies",
+   "n": 2,
+   "place": "TOKYO / SEOUL",
+   "scene": "asia",
+   "source": "EXCHANGES",
+   "sub": "KOSPI 5,039.35 · Nikkei 58,644.63 · MSCI +1.5%",
+   "tag": "CONFIRMED"
+  },
+  {
+   "callout": "10 OF 12",
+   "headline": "Huawei guilty on 10 of 12 counts in Brooklyn trial",
+   "n": 3,
+   "place": "BROOKLYN",
+   "scene": "gavel",
+   "source": "REUTERS / AP",
+   "sub": "Bank fraud, trade-secret theft · Cleared of racketeering",
+   "tag": "CONFIRMED"
+  }
  ],
- "diverging": [
+ "timeline": [
   [
-   "GAS",
-   12.0
+   "02:30",
+   "Villavicencio toll"
   ],
   [
-   "KOSPI",
-   7.03
+   "07:52",
+   "WFP 7.3m warning"
   ],
   [
-   "NIKKEI",
-   3.91
+   "10:00",
+   "Abu Nahal strike"
   ],
   [
-   "MSCI",
-   1.5
+   "15:00",
+   "Confidence 103.3"
   ],
   [
-   "XRP",
-   0.6
+   "16:30",
+   "Europe closes"
   ],
   [
-   "GOLD",
-   -0.85
+   "20:26",
+   "Huawei verdict"
   ],
   [
-   "ETH",
-   -1.54
-  ],
-  [
-   "BTC",
-   -1.68
-  ],
-  [
-   "BRENT",
-   -2.99
+   "21:00",
+   "Wall St close"
   ]
- ],
- "hero": {
-  "headline": "Myanmar guilty of genocide in 9-6 ICJ ruling",
-  "label": "9-6 VERDICT",
-  "n": 1,
-  "place": "THE HAGUE",
-  "scene": "court",
-  "source": "DAILY SUMMARY OF (WORLD)",
-  "stats": [
-   [
-    "9-6",
-    "ICJ VERDICT"
-   ],
-   [
-    "2017",
-    "RAKHINE OPERATIONS"
-   ],
-   [
-    "FIRST",
-    "STATE FOUND RESPONSIBLE"
-   ]
-  ],
-  "sub": "First state ever found responsible · 2017 Rakhine operations",
-  "tag": "REPORTED"
- },
- "hero2": {
-  "headline": "Russian nuclear satellite feared within 60 days",
-  "label": "60 DAYS",
-  "n": 2,
-  "place": "BRUSSELS",
-  "scene": "satellite",
-  "source": "TAGESSPIEGEL VIA DAILY SUMMARY OF",
-  "sub": "‘Sputnik-S’ reported · NATO vows defence against space threat",
-  "tag": "REPORTED"
- }
+ ]
 }
