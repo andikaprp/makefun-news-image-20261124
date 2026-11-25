@@ -47,26 +47,6 @@
   [
    "LONDON",
    "Capita shares plunge 70%, chief quits"
-  ],
-  [
-   "HONG KONG",
-   "Swire sells 4.15% Cathay HK$3.57bn"
-  ],
-  [
-   "EUROPE",
-   "Car sales +5.4% to 9.46m in 10 mo"
-  ],
-  [
-   "BRASILIA",
-   "2027 growth 1.8%; inflation 4.5%"
-  ],
-  [
-   "SOLOMONS",
-   "China deal dropped for Australia pact"
-  ],
-  [
-   "KESWICK",
-   "Delia Smith fights £1.2bn centre"
   ]
  ],
  "chartcard": {
@@ -104,8 +84,8 @@
    "scene": "chip",
    "source": "US BIS",
    "sub": "Entity List · GPU licences required",
-   "tag": "OFFICIAL",
-   "sub_full": "Entity List · GPU licences required · US BIS"
+   "sub_full": "Entity List · GPU licences required · US BIS",
+   "tag": "OFFICIAL"
   },
   {
    "headline": "Zelensky seeks 4-party talks",
@@ -115,8 +95,8 @@
    "scene": "table",
    "source": "DAILY SUMMARY OF",
    "sub": "Kyiv ready to meet Tue 24 Nov",
-   "tag": "REPORTED",
-   "sub_full": "Kyiv ready to meet Tue 24 Nov · DAILY SUMMARY OF"
+   "sub_full": "Kyiv ready to meet Tue 24 Nov · DAILY SUMMARY OF",
+   "tag": "REPORTED"
   },
   {
    "headline": "Tripoli: answer on 2-ship strike",
@@ -126,8 +106,8 @@
    "scene": "ship",
    "source": "HORIZON",
    "sub": "Drone hit Russian warship at Benghazi",
-   "tag": "REPORTED",
-   "sub_full": "Drone hit Russian warship at Benghazi · HORIZON"
+   "sub_full": "Drone hit Russian warship at Benghazi · HORIZON",
+   "tag": "REPORTED"
   },
   {
    "headline": "Hasina returns 16 December",
@@ -137,8 +117,8 @@
    "scene": "plane",
    "source": "REUTERS",
    "sub": "Biman flight after 2+ years in India",
-   "tag": "REPORTED",
-   "sub_full": "Biman flight after 2+ years in India · REUTERS"
+   "sub_full": "Biman flight after 2+ years in India · REUTERS",
+   "tag": "REPORTED"
   },
   {
    "headline": "‘El Chapo Isidro’ faces 6 charges",
@@ -148,8 +128,8 @@
    "scene": "shield",
    "source": "HORIZON",
    "sub": "Guasave: 4 soldiers, 16 gunmen dead",
-   "tag": "REPORTED",
-   "sub_full": "Guasave: 4 soldiers, 16 gunmen dead · HORIZON"
+   "sub_full": "Guasave: 4 soldiers, 16 gunmen dead · HORIZON",
+   "tag": "REPORTED"
   },
   {
    "headline": "Death for spy over 35 secrets",
@@ -159,8 +139,8 @@
    "scene": "file",
    "source": "GOLD WALL PRESS",
    "sub": "Ma took over 1m yuan (~$150,000)",
-   "tag": "REPORTED",
-   "sub_full": "Ma took over 1m yuan (~$150,000) · GOLD WALL PRESS"
+   "sub_full": "Ma took over 1m yuan (~$150,000) · GOLD WALL PRESS",
+   "tag": "REPORTED"
   },
   {
    "headline": "2 missiles, 1 drone hit Poland",
@@ -170,8 +150,8 @@
    "scene": "awacs",
    "source": "HORIZON",
    "sub": "Holocene count · NATO sends AWACS",
-   "tag": "REPORTED",
-   "sub_full": "Holocene count · NATO sends AWACS · HORIZON"
+   "sub_full": "Holocene count · NATO sends AWACS · HORIZON",
+   "tag": "REPORTED"
   },
   {
    "headline": "Yemen strikes: 25 dead/missing",
@@ -181,8 +161,8 @@
    "scene": "desert",
    "source": "HORIZON",
    "sub": "Coaches hit · 17 dead at telecom sites",
-   "tag": "REPORTED",
-   "sub_full": "Coaches hit · 17 dead at telecom sites · HORIZON"
+   "sub_full": "Coaches hit · 17 dead at telecom sites · HORIZON",
+   "tag": "REPORTED"
   },
   {
    "headline": "Pa. measles: 9th death, 1,638 cases",
@@ -192,8 +172,8 @@
    "scene": "virus",
    "source": "AL JAZEERA",
    "sub": "46 counties · 49 new in 5 days",
-   "tag": "CONFIRMED",
-   "sub_full": "46 counties · 49 new in 5 days · AL JAZEERA"
+   "sub_full": "46 counties · 49 new in 5 days · AL JAZEERA",
+   "tag": "CONFIRMED"
   },
   {
    "headline": "Canada jets 41.9% serviceable",
@@ -203,8 +183,8 @@
    "scene": "jet",
    "source": "PENTAGON",
    "sub": "Pentagon rebuke · 88 F-35s reviewed",
-   "tag": "OFFICIAL",
-   "sub_full": "Pentagon rebuke · 88 F-35s reviewed · PENTAGON"
+   "sub_full": "Pentagon rebuke · 88 F-35s reviewed · PENTAGON",
+   "tag": "OFFICIAL"
   },
   {
    "headline": "Seoul jets scramble on Russians",
@@ -214,8 +194,8 @@
    "scene": "jets",
    "source": "JAPAN TIMES",
    "sub": "Jets entered air-defence zone Tue",
-   "tag": "REPORTED",
-   "sub_full": "Jets entered air-defence zone Tue · JAPAN TIMES"
+   "sub_full": "Jets entered air-defence zone Tue · JAPAN TIMES",
+   "tag": "REPORTED"
   },
   {
    "headline": "WFP: 7.3m threatened by wars",
@@ -225,9 +205,27 @@
    "scene": "wheat",
    "source": "AL JAZEERA",
    "sub": "Food aid corridors blocked",
-   "tag": "REPORTED",
-   "sub_full": "Food aid corridors blocked · AL JAZEERA"
+   "sub_full": "Food aid corridors blocked · AL JAZEERA",
+   "tag": "REPORTED"
   }
+ ],
+ "datecheck": [
+  [
+   "BRUSSELS",
+   "EU 22nd Russia pkg proposed"
+  ],
+  [
+   "UN",
+   "AI risk framework in 1 year"
+  ],
+  [
+   "EUROPE",
+   "Closes: CAC +1.48%, DAX +2.15%"
+  ],
+  [
+   "NFL",
+   "Washington beat Cincinnati 22-20"
+  ]
  ],
  "diverging": [
   [
@@ -300,23 +298,5 @@
   "source": "TAGESSPIEGEL VIA DAILY SUMMARY OF",
   "sub": "‘Sputnik-S’ reported · NATO vows defence against space threat",
   "tag": "REPORTED"
- },
- "datecheck": [
-  [
-   "BRUSSELS",
-   "EU 22nd Russia pkg proposed"
-  ],
-  [
-   "UN",
-   "AI risk framework in 1 year"
-  ],
-  [
-   "EUROPE",
-   "Closes: CAC +1.48%, DAX +2.15%"
-  ],
-  [
-   "NFL",
-   "Washington beat Cincinnati 22-20"
-  ]
- ]
+ }
 }

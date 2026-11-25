@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Fresh renderer for news-image-20261124 candidate-v2.
-Design base: Gemini-experiment composition (broadsheet masthead, single
-hero lead + stat strip, chart furniture, 3-col middle, briefs strip),
-plus a code-drawn pictorial panel on every headlined card.
+"""Renderer for news-image-20261124 candidate-slot2 (SLOT 2).
+Evolves candidate-v2's composition under Dika's fewer-briefs scope
+(25 Nov): briefs 17 -> 12, and the freed space funds the winners'
+top-mounted wide panels on the hero-adjacent compact row (cards 4-7,
+using candidate-v3's light-ground wide scene redraws) plus a 20px
+floor on every compact headline. Everything above the grid and all
+census figures are candidate-v2's, unchanged.
 All copy from data.json (census stories-final.json). Renders at 2x,
 downscales to 1024x1024."""
 import json, os, random
@@ -80,10 +83,30 @@ PALETTES = {
     "wheat":     ((80, 90, 30), (230, 205, 110), (220, 120, 60)),
 }
 
-def panel(scene, label, w, h, seed):
+# V3: light-ground palettes for the compact scenes, redrawn as wide
+# horizontal compositions (pastel ground, dark silhouettes, scene accent)
+LIGHT_PALETTES = {
+    "chip":      ((170, 220, 210), (240, 248, 240), (200, 150, 20)),
+    "table":     ((200, 195, 235), (245, 243, 250), (200, 60, 50)),
+    "ship":      ((170, 205, 235), (240, 248, 252), (200, 60, 50)),
+    "plane":     ((175, 210, 240), (242, 248, 252), (200, 150, 20)),
+    "shield":    ((235, 205, 175), (250, 242, 230), (178, 34, 34)),
+    "file":      ((228, 218, 180), (250, 246, 230), (178, 34, 34)),
+    "awacs":     ((195, 212, 232), (246, 248, 250), (200, 60, 50)),
+    "desert":    ((240, 214, 155), (252, 240, 215), (178, 34, 34)),
+    "virus":     ((232, 190, 222), (250, 240, 248), (150, 40, 130)),
+    "jet":       ((185, 208, 235), (244, 248, 252), (200, 60, 50)),
+    "jets":      ((180, 215, 242), (244, 250, 252), (200, 150, 20)),
+    "wheat":     ((215, 228, 150), (248, 246, 220), (190, 100, 30)),
+}
+
+def panel(scene, label, w, h, seed, wide=False):
     """Render one scene into its own panel-sized image (art containment)."""
     pw, ph = int(w * S), int(h * S)
-    top, mid, acc = PALETTES[scene]
+    if wide:
+        top, mid, acc = LIGHT_PALETTES[scene]
+    else:
+        top, mid, acc = PALETTES[scene]
     img = Image.new("RGB", (pw, ph), top)
     d = ImageDraw.Draw(img, "RGBA")
     # vertical gradient top -> mid blend
@@ -105,7 +128,10 @@ def panel(scene, label, w, h, seed):
     def E(x0, y0, x1, y1, fill, **kw): d.ellipse([x0*u, y0*v, x1*u, y1*v], fill=fill, **kw)
     def P(pts, fill, **kw): d.polygon([(x*u, y*v) for x, y in pts], fill=fill, **kw)
     def L(pts, fill, wd=2): d.line([(x*u, y*v) for x, y in pts], fill=fill, width=max(1, int(wd*u/2)))
-    dark = (18, 20, 26, 235); light = (245, 242, 230, 255)
+    dark = (18, 20, 26, 235)
+    # wide/light mode: scene shapes drawn in `light` become dark
+    # silhouettes on the pastel ground (winners' grammar)
+    light = (34, 38, 48, 255) if wide else (245, 242, 230, 255)
     if scene == "court":  # Peace-Palace-like columns + pediment + split verdict bar
         P([(8, 30), (50, 8), (92, 30)], light)
         R(10, 32, 90, 38, light)
@@ -228,8 +254,8 @@ def build():
     def card_box(x, y, w, h):
         d.rectangle([X(x), X(y), X(x + w), X(y + h)], fill=PAPER, outline=RULE, width=S)
 
-    def paste_panel(scene, label, x, y, w, h, seed):
-        p = panel(scene, label, w, h, seed)
+    def paste_panel(scene, label, x, y, w, h, seed, wide=False):
+        p = panel(scene, label, w, h, seed, wide=wide)
         img.paste(p, (int(X(x)), int(X(y))))
 
     # HERO (rank 1) + hero2 (rank 2)
@@ -316,51 +342,83 @@ def build():
     d.text((X(16), X(gy)), "THE MIDDLE EDITION · WIRE RANKS 4–12 · 14–16", font=F(SANS_B, 11.5), fill=INK)
     leg = "TAGS: CONFIRMED = WIRE DATA · OFFICIAL = GOVT BODY · REPORTED = SINGLE-SOURCE"
     d.text((W - X(16) - tw(d, leg, F(SANS_B, 9.5)), X(gy + 1)), leg, font=F(SANS_B, 9.5), fill=GREY)
-    gy += 18
-    cw, chh, gap = 243, 90, 6
+    gy += 15  # trim inside grid zone: header block 18 -> 15 (grid top 539)
+    cw, gap = 243, 4  # trim: row/col gap 6 -> 4
+    PANEL_H = 56  # hard floor for a top-mounted panel
+    KOFF = 17     # kicker at text-block +4, headline at +17 (v2: +5/+19)
+    # SLOT-2 GEOMETRY (Dika's fewer-briefs scope, 25 Nov): row 1
+    # (cards 4-7, hero-adjacent) gets the winners' LIGHT-ground,
+    # FULL-WIDTH TOP-MOUNTED panels (241x56, v3 wide scene redraws);
+    # rows 2-3 keep v2's side panels. ALL compact headlines sit at
+    # the hard 20px floor (v2 shipped 18.5px); every sub prints IN
+    # FULL, shrunk 11 -> 8.5 until it fits <= 2 lines. Funded by the
+    # briefs cut (17 -> 12) plus spacing trims inside this zone only;
+    # arithmetic in measure-slot2.py / measure-slot2b.py.
+    # Pass 1: measure every card at those floors (v2 fit/wrap logic).
+    plan = []
+    for idx, c in enumerate(DATA["compacts"]):
+        top = idx < 4
+        inner = (cw - 10) if top else (cw - 74)
+        pxh, linesh = fit_wrap(d, c["headline"], SERIF_B, 20, 20, inner * S, 3)
+        assert pxh >= 20 and len(linesh) <= 3, f"card {c['n']} headline breaks 20px floor"
+        report["headline_min_px"] = min(report["headline_min_px"], pxh)
+        sub_px = 11.0
+        while sub_px > 8.5:
+            slines = wrap(d, c["sub_full"], F(SANS, sub_px), inner * S)
+            if len(slines) <= 2:
+                break
+            sub_px -= 0.5
+        slines = wrap(d, c["sub_full"], F(SANS, sub_px), inner * S)
+        assert len(slines) <= 2, f"card {c['n']} sub does not fit in full in 2 lines"
+        if top:
+            need = PANEL_H + KOFF + len(linesh) * pxh * 1.1 + len(slines) * sub_px * 1.25 + 2
+        else:
+            need = KOFF + len(linesh) * pxh * 1.1 + len(slines) * sub_px * 1.25 + 4
+        plan.append((pxh, linesh, sub_px, slines, need))
+    row_h = [max(plan[r * 4 + i][4] for i in range(4)) for r in range(3)]
+    report["slot2_row_h"] = [round(v, 1) for v in row_h]
+    report["slot2_grid_h"] = sum(row_h) + 2 * gap
+    # Pass 2: draw.
+    yy_grid = gy
     for idx, c in enumerate(DATA["compacts"]):
         r, col = divmod(idx, 4)
-        x = 16 + col * (cw + gap); y = gy + r * (chh + gap)
+        x = 16 + col * (cw + gap); y = yy_grid + sum(row_h[:r]) + r * gap
+        chh = row_h[r]
+        pxh, linesh, sub_px, slines, need = plan[idx]
         card_box(x, y, cw, chh)
-        paste_panel(c["scene"], c["label"], x + 1, y + 1, 58, chh - 2, 100 + idx)
-        tx = x + 66; tw_max = cw - 74
-        # kicker/tag clearance: shrink both until a real gap (>=10px) remains
+        if idx < 4:  # top-mounted: light wide panel, text full width beneath
+            paste_panel(c["scene"], c["label"], x + 1, y + 1, cw - 2, PANEL_H, 100 + idx, wide=True)
+            tx = x + 5; tw_max = cw - 10; base = y + PANEL_H
+        else:        # side panel (v2 geometry, scenes unchanged)
+            paste_panel(c["scene"], c["label"], x + 1, y + 1, 58, chh - 2, 100 + idx)
+            tx = x + 66; tw_max = cw - 74; base = y
         kpx, tpx = 9.0, 9.0
         ktxt = f"{c['n']}. {c['place']}"
         while kpx > 7 and tw(d, ktxt, F(SANS_B, kpx)) / S + tw(d, c["tag"], F(SANS_B, tpx)) / S > tw_max - 10:
             kpx -= 0.5; tpx = max(7.5, tpx - 0.25)
         assert tw(d, ktxt, F(SANS_B, kpx)) / S + tw(d, c["tag"], F(SANS_B, tpx)) / S <= tw_max - 10, f"card {c['n']} kicker/tag collision"
-        kicker(tx, y + 5, ktxt, px=kpx)
+        kicker(tx, base + 4, ktxt, px=kpx)
         tf = F(SANS_B, tpx)
-        d.text((X(x + cw - 5) - tw(d, c["tag"], tf), X(y + 5)), c["tag"], font=tf, fill=TEAL if c["tag"]=="CONFIRMED" else (GREY if c["tag"]=="REPORTED" else RED))
-        pxh, linesh = fit_wrap(d, c["headline"], SERIF_B, 18.5, 13, tw_max * S, 3)
-        report["headline_min_px"] = min(report["headline_min_px"], pxh)
-        yy = y + 19
+        d.text((X(x + cw - 5) - tw(d, c["tag"], tf), X(base + 4)), c["tag"], font=tf, fill=TEAL if c["tag"]=="CONFIRMED" else (GREY if c["tag"]=="REPORTED" else RED))
+        yy = base + KOFF
         for ln in linesh:
             d.text((X(tx), X(yy)), ln, font=F(SERIF_B, pxh), fill=INK); yy += pxh * 1.1
-        # sub printed IN FULL (source included): shrink until every line fits
-        sub_px = 11.0
-        avail = (y + chh - 4) - yy
-        while sub_px > 8.5:
-            slines = wrap(d, c["sub_full"], F(SANS, sub_px), tw_max * S)
-            if len(slines) * sub_px * 1.25 <= avail:
-                break
-            sub_px -= 0.5
-        slines = wrap(d, c["sub_full"], F(SANS, sub_px), tw_max * S)
-        assert len(slines) * sub_px * 1.25 <= avail + 0.01, f"card {c['n']} sub does not fit in full"
         for ln in slines:
             d.text((X(tx), X(yy)), ln, font=F(SANS, sub_px), fill=GREY); yy += sub_px * 1.25
-        assert yy <= y + chh - 2, f"card {c['n']} overflow"
+        assert yy <= y + chh - 2 + 0.01, f"card {c['n']} overflow"
+    gy = yy_grid + report["slot2_grid_h"]  # grid bottom, for the briefs strip
 
-    # BRIEFS STRIP: Tuesday briefs only (17); Monday items live in DATE CHECK
-    by = gy + 3 * chh + 2 * gap + 8
+    # BRIEFS STRIP: Tuesday briefs only (12 after Dika's slot-2 cut);
+    # Monday items live in DATE CHECK. Trims inside this zone: gap
+    # 8 -> 6, header block 24 -> 20, pitch 18 -> 17.5, bottom pad 16 -> 14.
+    by = gy + 6
     d.line([X(16), X(by), X(1008), X(by)], fill=RULE, width=S)
-    d.text((X(16), X(by + 5)), f"IN BRIEF · {len(DATA['briefs'])} MORE TUESDAY STORIES", font=F(SANS_B, 11.5), fill=INK)
-    by += 24
+    d.text((X(16), X(by + 4)), f"IN BRIEF · {len(DATA['briefs'])} MORE TUESDAY STORIES", font=F(SANS_B, 11.5), fill=INK)
+    by += 20
     colw = 992 / 3; GUT = 24  # real gutter: no brief may enter the last 24px of its column
     for i, (place, txt) in enumerate(DATA["briefs"]):
         r, col = divmod(i, 3)
-        x = 16 + col * colw; y = by + r * 18
+        x = 16 + col * colw; y = by + r * 17.5
         pxb = 17.0
         while pxb > 11 and tw(d, place, F(SANS_B, pxb)) + tw(d, f" — {txt}", F(SANS, pxb)) > (colw - GUT) * S:
             pxb -= 0.5
@@ -370,15 +428,16 @@ def build():
         wp = tw(d, place, F(SANS_B, pxb))
         d.text((X(x) + wp, X(y)), f" — {txt}", font=F(SANS, pxb), fill=INK)
     nrows = (len(DATA["briefs"]) + 2) // 3
-    report["briefs_bottom"] = by + (nrows - 1) * 18 + 16
+    report["briefs_bottom"] = by + (nrows - 1) * 17.5 + 14
 
-    # DATE CHECK strip: the 4 Monday items, quiet muted band, real-date label
-    dcy = report["briefs_bottom"] + 8
-    d.rectangle([X(16), X(dcy), X(1008), X(dcy + 44)], fill=(238, 233, 219), outline=(170, 164, 148), width=S)
-    d.text((X(24), X(dcy + 5)), "DATE CHECK · MON 23 NOV — PRIOR-DAY ITEMS, NOT TUESDAY NEWS", font=F(SANS_B, 9.5), fill=GREY)
+    # DATE CHECK strip: the 4 Monday items, quiet muted band, real-date
+    # label; band trimmed 44 -> 36 (label +4, items +18, same type sizes)
+    dcy = report["briefs_bottom"] + 6
+    d.rectangle([X(16), X(dcy), X(1008), X(dcy + 36)], fill=(238, 233, 219), outline=(170, 164, 148), width=S)
+    d.text((X(24), X(dcy + 4)), "DATE CHECK · MON 23 NOV — PRIOR-DAY ITEMS, NOT TUESDAY NEWS", font=F(SANS_B, 9.5), fill=GREY)
     dccolw = 992 / 4
     for i, (place, txt) in enumerate(DATA["datecheck"]):
-        x = 16 + i * dccolw; y = dcy + 21
+        x = 16 + i * dccolw; y = dcy + 18
         pxd = 11.0
         while pxd > 8.5 and tw(d, place, F(SANS_B, pxd)) + tw(d, f" — {txt}", F(SANS, pxd)) > (dccolw - 16) * S:
             pxd -= 0.5
@@ -386,7 +445,7 @@ def build():
         d.text((X(x + 8), X(y)), place, font=F(SANS_B, pxd), fill=(110, 60, 40))
         wp = tw(d, place, F(SANS_B, pxd))
         d.text((X(x + 8) + wp, X(y)), f" — {txt}", font=F(SANS, pxd), fill=GREY)
-    report["datecheck_bottom"] = dcy + 44
+    report["datecheck_bottom"] = dcy + 36
     report["page_bottom"] = report["datecheck_bottom"]
     assert report["page_bottom"] <= 1014, report["page_bottom"]  # >=10px clear of canvas edge
 
